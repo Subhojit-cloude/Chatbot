@@ -1,0 +1,289 @@
+============================================================
+ASANSOL ENGINEERING COLLEGE - LIBRARY KNOWLEDGE BASE
+Source: [Our Library | Asansol Engineering College](https://www.aecwb.edu.in/our-library.php)
+============================================================
+
+[1] GENERAL OVERVIEW & SOFTWARE
+------------------------------------------------------------
+- Structure: Consists of a Central Library and six Departmental libraries.
+- Function: Collectively supports the teaching and learning programmes of the institute.
+- Software System: Uses the Libsys software package.
+- Catalog / OPAC: The book database is updated on a day-to-day basis and accessible via OPAC (Online Public Access Catalog).
+- Institute Details: Established in 1998, self-financing institute situated in Asansol, Burdwan, West Bengal; NAAC "A" Graded, NBA Accredited in B.Tech ECE, CSE & ME. Offers B.Tech, MCA, and M.Tech.
+
+
+[2] LIBRARY SERVICES & BORROWING RULES
+------------------------------------------------------------
+- Book Bank Section:
+  * Purpose: Textbooks from the book bank are issued to students for the duration of one entire semester.
+  * Issue Limit: Maximum of 3 books per student.
+
+- Circulation Section:
+  * Eligibility: Textbooks are issued from the circulation section to all library members.
+  * Issue Limit: Students can issue a maximum of 3 books.
+  * Duration / Loan Period: Up to 30 days.
+
+- Reference Service:
+  * Material Held: Reference books along with a copy of all textbooks.
+  * Usage Policy: For reading purposes inside the library only (confined copies).
+  * Return Rule: All reference books must be returned before leaving the reading room.
+
+
+[3] FLOOR-WISE INFRASTRUCTURE LAYOUT
+------------------------------------------------------------
+- Ground Floor:
+  * Book Bank
+  * Circulation Section (Engineering)
+  * Acquisition Section
+  * Librarian's Office
+  * Xerox / Reprography Centre
+
+- 1st Floor:
+  * Reference Section
+  * Digital Library
+  * Reading Room
+
+- 2nd Floor:
+  * Circulation Section (MCA)
+  * Print Journals Section
+  * Reading Room
+
+
+[4] CONTACT & LOCATION DETAILS
+------------------------------------------------------------
+- Address: Vivekananda Sarani, Kanyapur, Asansol - 713305, West Bengal
+- Phone: 9073683912
+- Email: principal@aecwb.edu.in
+- Safety: 24x7 Women Helpline service supported on campus.
+
+
+[5] Web OPAC Guidelines
+---------------------------------------------------------------
+Visit college website  ://aecwb.edu.in
+Click on library
+Click on Web OPAC
+Log in using user name and pass word
+Click on Search Book	
+Select Title/Author/Subject from the given box
+Enter Title/Author/Subject name in the given box
+Then click on Go
+You can find all the details of the book.
+
+[6] NEW ARRIVALS
+----------------------------------------------------------------
+Cloud Computing ( 15 copies )
+Practical Statistics for Data Scientists ( 10 copies )
+Cloud Computing ( 10 copies )
+Compilers: Principles, Techniques & Tools ( 20 copies )
+Computer System Architecture ( 20 copies )
+Beginners Guide for Analysis Using R ( 20 copies )
+Machine Learning ( 20 copies )
+Big Data & Hadoop ( 5 copies )
+Data Science & Analytics ( 15 Copies )
+Hospital Management &  Administration ( 5 copies )
+Hospital Administration ( 5 copies )
+
+[7] LIBRARY RULES
+----------------------------------------------------------------
+-Total six books will be issued to every students, three books from the book bank for the semester and three from the circulation section retainable for a maximum period of 30 days.
+-Reference copies, CDs, Journals, Magazines are not lent to anyone, however these can be issued from the reference section on the basis of temporary issue.
+-The borrowers’ should check the books thoroughly for missing pages, pictures etc. before leaving the counter while borrowing books.
+-No book in damaged condition will be accepted from the borrower.
+-Borrower should not write anything or disfigure the book in any way.
+-Loss or damage of book must be reported to the librarian immediately and the library will collect the current price of the lost / damaged book or asked to replace by a new copy.
+-For the loss of Library ID Card students have to deposit Rs. 50.00 for duplicate ID Card.
+-Fine: Late fine beyond the due date will be Re. 1.00 per day per book.
+-Library Timings: 8:00 AM - 8:00 PM
+-Issue and Return of Books: 10:00 AM - 4:30 PM
+-E-Resources Usage Policy:
+-Electronic resources such as e-journals, e-books etc. can be searched and materials can be downloaded and printed as single copy of articles. Downloading and printing of a complete book or an entire issue of a volume of one or more journals ( systematic downloading is strictly prohibited).
+
+[8] LIBRARY STAFF DIRECTORY
+------------------------------------------------------------
+1. BIDYUT KUMAR PATRA
+   - Designation: Librarian
+   - Qualification: M.Sc., M.L.I.S.
+   - Contact No: 6297452663
+
+2. DEBABRATA MALAKAR
+   - Designation: Library Asst.
+   - Qualification: B.A. (Hons), M.L.I.S.
+   - Contact No: 8768822671
+
+3. PROTIM MOHANTA
+   - Designation: Library Asst.
+   - Qualification: Not specified
+   - Contact No: 9382056609
+
+4. C.K. RESHMA
+   - Designation: Staff Member
+   - Qualification: MBA, PG in Public Relation
+   - Contact No: 9832161748
+
+5. SUKANTA MULLICK
+   - Designation: Library Asst.
+   - Qualification: B.Sc., M.L.I.S.
+   - Contact No: 7602588816
+
+6. AMIT KUMAR DE
+   - Designation: Library Asst.
+   - Qualification: M.A., M.L.I.S.
+   - Contact No: 9732207315
+
+
+[9]  BOOK COLLECTION METRICS
+------------------------------------------------------------
+- Total Volumes: 67,093
+- Total Titles: 7,681
+
+
+ ELECTRONIC RESOURCES & DIGITAL ASSETS
+------------------------------------------------------------
+- e-Journals: IEEE ASPP (IEEE All Society Periodicals Package) – provides access to the IEEE core collection of Engineering and Computer Science periodicals.
+- e-Books: Available via digital resources.
+- Accompanying Media: 250 Books Accompanying CDs.
+- Video Course Repository:
+  * Procured from: IIT Kharagpur (IIT KGP) and IIT Delhi.
+  * Access Mode: CD server connected across campus LAN.
+  * Total Courses: 50 full courses.
+
+
+ IIT VIDEO COURSES DIRECTORY (50 COURSES)
+------------------------------------------------------------
+1. Artificial Intelligence - Prof. P. Dasgupta
+2. Computer Architecture and Operating System - Prof. S.C. De Sarkar
+3. Digital Signal Processing - Prof. T.K. Basu
+4. Digital Voice and Picture Coding - Prof. R.V. Rajakumar
+5. Basic Electronics - Prof. R.V. Rajakumar
+6. Electromagnetic Field Theory - Prof. K. Venkatratnam
+7. Illumination Engineering - Prof. N.K. Kishore
+8. Introduction to Database Management System - Prof. P.P. Chakraborty
+9. Introduction to Software Engineering - Prof. R. Mall
+10. Generalized Electrical Machine Analysis - Prof. K. Venkatratnam
+11. Industrial Automation and Control - Prof. S. Mukhopadhyay
+12. Internet Technologies - Prof. Indranil Sengupta
+13. Electrical Machine - Prof. T.K. Bhattacharya
+14. Mobile Communication - Prof. R.V. Rajakumar
+15. Multimedia System - Prof. S. Sengupta
+16. Neural Networks - Prof. S. Sengupta
+17. Programming and Data Structure - Prof. P.P. Chakraborty
+18. Switching and Finite Automata Theory - Prof. S.C. De Sarkar
+19. Theory of Electrical Machines - Prof. S.N. Bhadra
+20. Theory and Practice in Machining - Prof. A.B. Chattopadhyay
+21. VLSI System Design - Prof. D. Roy Choudhury
+22. VLSI Technology - Prof. S. Kal
+23. Corporate Strategy of Innovation - Prof. J. Bhattacharya
+24. Dynamics of Physical System - Prof. S. Banerjee
+25. Design and Analysis of Algorithms - Prof. T.K. Dey
+26. Digital Computer Organization - Prof. P.K. Biswas
+27. Electronic Storage Automation - Prof. I. Sengupta
+28. Fundamentals of Environmental Pollution and Control - Prof. Jayanta Bhattacharya
+29. Numerical Analysis and Algorithms - Prof. P. Neogi
+30. Human Resource Management - I - Prof. Kalyan Chakraborty
+31. Human Resource Management - II - Prof. K.B.L. Srivastava
+32. Intelligent Machines and Systems - Prof. C.S. Kumar
+33. Reliability and Quality Engineering - Prof. J. Bhattacharya
+34. Robotics and Robot Applications - Prof. A.B. Chattopadhyay
+35. Special Electrical Motors - Prof. K. Venkatratnam
+36. Sustainable Development - Prof. Jayanta Bhattacharya
+37. Control Engineering - Prof. Madan Gopal
+38. Circuit Theory - Prof. S.C. Dutta Roy
+39. Electric Drives - Prof. S.S. Murthy
+40. Electromechanical Energy Conversion - Prof. S.S. Murthy
+41. Power System Protection - Prof. M.L. Kothari
+42. Power System Dynamics - Prof. M.L. Kothari
+43. Power System Engineering - Prof. D.P. Kothari
+44. Digital Image Processing - Prof. S. Sengupta
+45. Computer Networks and Communication - Prof. Ajit Pal
+46. Digital Communication - Prof. S. Chakraborty
+47. Microprocessor and Microcontroller - Prof. Ajit Pal
+48. Estimation of Signals and Systems - Prof. S. Mukhopadhyay
+49. Management Information System - Prof. B. Mohanty
+50. Network Signals and Systems - Prof. T.K. Basu
+
+
+MAJOR ENCYCLOPEDIAS, HANDBOOKS & DICTIONARIES
+------------------------------------------------------------
+- General & Language Reference:
+  * Encyclopaedia Britannica (32 vol.)
+  * Encyclopaedia Britannica Student Edition (7 vol.)
+  * Knowledge Encyclopaedia
+  * Oxford Dictionary of English Idioms
+  * Oxford Advanced Learners Dictionary
+  * Oxford Dictionary of Reference
+  * Oxford English-English-Bengali Dictionary
+  * Longman Dictionary of Contemporary English
+  * Samsad English Bengali Dictionary
+  * Samsad Bengali English Dictionary
+  * Webster’s Comprehensive Dictionary
+  * World of Facts
+  * 50 Years of Space
+
+- Electrical, Electronics & Communication:
+  * MGH Encyclopaedia of Science and Technology (20 vol.)
+  * MGH Dictionary of Science and Technical Terms
+  * The Control Handbook
+  * Electrical Power Engineering Hand Book
+  * The Circuits and Filters Hand Book
+  * Modern Power Station Practice Hand Book (9 vol.)
+  * Hand Book of Electrical Design Details
+  * National Electrical Safety Code Hand Book
+  * Hand Book of Electric Power Calculations
+  * The Lineman’s and Cableman’s Hand Book
+  * Source Book of Control System Engineering
+  * Hand Book of Switch Gears
+  * National Electric Code Hand Book
+  * Industrial Control Hand Book
+  * Electric Safety Hand Book
+  * Electrical Engineering Hand Book
+  * Power Generation Hand Book
+  * Hand Book of Automotive Power Electronics and Motor Drives
+  * Hand Book of Power System Stability and Control
+  * Hand Book of Electrical Power Distribution
+  * Antennas Engineering Hand Book
+  * Hand Book of Microwave Technology
+  * Hand Book of Video and Television Engineering
+  * Practical Antennas Hand Book
+  * Wireless Network Performance Hand Book
+  * Encyclopaedia of Wireless Telecommunications
+  * Hand Book of Optical Communications Networks
+  * Packet Broadband Network Hand Book
+  * Process Industrial Instrumentation and Control Hand Book
+  * Hand Book of RF/Microwave Components and Engineering
+  * Hand Book of Electronic Engineering
+  * Instrument Engineers Hand Book
+  * Hand Book of Electronic Manufacturing
+  * Hand Book of Electronic Messaging
+  * Hand Book of Communication System Management
+
+- Mechanical, Production & Materials:
+  * ASME Hand Book (9 vol.)
+  * Energy Management Hand Book
+  * Hand Book of Mechanical Engineering
+  * Modern Standard Hand Book for Mechanical Engineering
+  * Machine Design Data Book
+  * Standard Hand Book of Plant Engineering
+  * Standard Hand Book of Engineering Calculations
+  * HVC Pump Hand Book
+  * MGH Hand Book of Mechanical Design
+  * Hand Book of Metallurgical Process Design
+  * Mechanical Engineering Hand Book
+  * Roll Forming Hand Book
+  * Machine Tools Hand Book
+  * Combustion Hand Book
+  * Hand Book of Heat Treatment of Steels
+
+- Computer Science, IT & Technology Management:
+  * Encyclopaedia of Information Systems
+  * Encyclopaedia of 20th Century Technology
+  * The Internet Encyclopaedia
+  * Hand Book of Data Management
+  * Network Management Hand Book
+  * Hand Book of Technology Management
+  * Local Area Network Hand Book
+  * Encyclopaedia of Computer Science and Technology
+  * Encyclopaedia of Ethics in Science and Technology
+
+
+
+
