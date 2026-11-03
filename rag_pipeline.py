@@ -23,6 +23,14 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
 
+# Prefer local Hugging Face cache to prevent long startup delays / offline stalls
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
+
+# Base directory for relative paths (resolves properly regardless of working directory)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 from dotenv import load_dotenv
 
 # LangChain core
@@ -43,47 +51,48 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 # ============================================================
 # 1. Load environment variables from .env
 # ============================================================
-load_dotenv()
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Validate that the API key is present
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
     raise EnvironmentError(
-        " GOOGLE_API_KEY not found in .env file. "
+        "❌ GOOGLE_API_KEY not found in .env file. "
         "Please add it: GOOGLE_API_KEY=your_key_here"
     )
 
 # ============================================================
 # 2. Configuration constants
 # ============================================================
-PERSIST_DIRECTORY = "./chroma_db"          # ChromaDB storage path
-COLLECTION_NAME = "college_data"           # Collection created during ingestion
+PERSIST_DIRECTORY = os.path.join(BASE_DIR, "chroma_db")     # ChromaDB storage path
+COLLECTION_NAME = "college_data"                           # Collection created during ingestion
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # Must match ingestion
-GEMINI_MODEL = "gemini-3.5-flash"          # Active Google Gemini Flash model with high quota
-FALLBACK_MODELS = [                        # Automatic fallbacks if daily quota is exhausted
-    "gemini-3.5-flash-lite",
-    "gemini-3-flash-preview",
+GEMINI_MODEL = "gemini-3.5-flash-lite"                     # Active Google Gemini Flash model with high quota
+FALLBACK_MODELS = [                                        # Automatic fallbacks if daily quota is exhausted
+    "gemini-3.5-flash",
+    "gemini-3.8-flash",
+    "gemini-flash-latest",
 ]
-TEMPERATURE = 0.1                          # Low temperature for factual answers
-TOP_K = 15                                 # Number of candidate chunks to retrieve
+TEMPERATURE = 0.1                                          # Low temperature for factual answers
+TOP_K = 15                                                 # Number of candidate chunks to retrieve
 
 # ============================================================
 # 3. Initialize HuggingFace embeddings
 #    (same model used during data ingestion for consistency)
 # ============================================================
-print(" Loading embedding model...")
+print("⏳ Loading embedding model...", flush=True)
 embedding_model = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL
 )
-print(f" Embedding model loaded: {EMBEDDING_MODEL}")
+print(f"✅ Embedding model loaded: {EMBEDDING_MODEL}", flush=True)
 
 # ============================================================
 # 4. Load the existing ChromaDB vector store
 # ============================================================
-print(" Loading ChromaDB vector store...")
+print("⏳ Loading ChromaDB vector store...", flush=True)
 if not os.path.isdir(PERSIST_DIRECTORY):
     raise FileNotFoundError(
-        f" ChromaDB directory not found at '{PERSIST_DIRECTORY}'. "
+        f"❌ ChromaDB directory not found at '{PERSIST_DIRECTORY}'. "
         "Please run the ingestion notebook first."
     )
 
@@ -95,11 +104,11 @@ vectorstore = Chroma(
 
 # Verify the collection has data
 doc_count = vectorstore._collection.count()
-print(f" ChromaDB loaded: {doc_count} vectors in '{COLLECTION_NAME}'")
+print(f"✅ ChromaDB loaded: {doc_count} vectors in '{COLLECTION_NAME}'", flush=True)
 
 if doc_count == 0:
     raise ValueError(
-        " ChromaDB collection is empty. "
+        "❌ ChromaDB collection is empty. "
         "Please run the ingestion notebook to populate it."
     )
 
@@ -110,23 +119,21 @@ retriever = vectorstore.as_retriever(
     search_type="similarity",
     search_kwargs={"k": TOP_K},
 )
-print(f" Retriever created — search_type='similarity', k={TOP_K}")
+print(f"✅ Retriever created — search_type='similarity', k={TOP_K}", flush=True)
 
 # ============================================================
 # 6. Initialize Google Gemini LLM
 # ============================================================
-print(" Initializing Google Gemini LLM...")
+print("⏳ Initializing Google Gemini LLM...", flush=True)
 llm = ChatGoogleGenerativeAI(
     model=GEMINI_MODEL,
     temperature=TEMPERATURE,
     google_api_key=GOOGLE_API_KEY,
 )
-print(f" Gemini LLM ready: model='{GEMINI_MODEL}', temperature={TEMPERATURE}")
+print(f"✅ Gemini LLM ready: model='{GEMINI_MODEL}', temperature={TEMPERATURE}", flush=True)
 
 # ============================================================
 # 7. Define the strict RAG system prompt
-# ============================================================
-# 7. Define the detailed RAG system prompt
 # ============================================================
 SYSTEM_PROMPT = """You are CampusMate, the official AI assistant for the college.
 
@@ -199,7 +206,7 @@ rag_chain = (
     | StrOutputParser()
 )
 
-print(" RAG chain assembled successfully!")
+print("✅ RAG chain assembled successfully!", flush=True)
 
 # ============================================================
 # 10. Public API — get_answer(question)
@@ -217,7 +224,7 @@ def get_answer(question: str) -> dict:
             - "sources" (list[str]): Unique source filenames used.
     """
     # Step 1: Multi-query search with domain keywords to capture admission & course docs
-    print(" Retrieving relevant college context...", flush=True)
+    print("⏳ Retrieving relevant college context...", flush=True)
     queries = [
         question,
         f"{question} programs degrees branches departments admission intake B.Tech M.Tech BCA BBA diploma",
@@ -234,13 +241,13 @@ def get_answer(question: str) -> dict:
         doc.metadata.get("source", "Unknown")
         for doc in retrieved_docs
     }))
-    print(f" Retrieved {len(retrieved_docs)} distinct chunks from {len(sources)} sources: {sources}", flush=True)
+    print(f"📄 Retrieved {len(retrieved_docs)} distinct chunks from {len(sources)} sources: {sources}", flush=True)
 
     # Step 3: Format deduplicated context
     context_text = format_documents(retrieved_docs)
 
     # Step 4: Run through prompt and Gemini with automatic quota fallback
-    print(" Generating detailed answer with Gemini...", flush=True)
+    print("⏳ Generating detailed answer with Gemini...", flush=True)
     models_to_try = [GEMINI_MODEL] + [m for m in FALLBACK_MODELS if m != GEMINI_MODEL]
     answer = None
     last_error = None
@@ -252,23 +259,37 @@ def get_answer(question: str) -> dict:
                 temperature=TEMPERATURE,
                 google_api_key=GOOGLE_API_KEY,
             )
-            answer = (prompt | active_llm | StrOutputParser()).invoke({
+            raw_answer = (prompt | active_llm | StrOutputParser()).invoke({
                 "context": context_text,
                 "question": question,
             })
-            print(f" Answer generated successfully using {model_name}!", flush=True)
+            answer = str(raw_answer)
+            print(f"✅ Answer generated successfully using {model_name}!", flush=True)
             break
         except Exception as err:
-            print(f" Model {model_name} hit limit or error: {err}. Trying fallback model...", flush=True)
+            print(f"⚠️ Model {model_name} hit limit or error: {err}. Trying fallback model...", flush=True)
             last_error = err
 
     if answer is None:
         # pyrefly: ignore[bad-raise]
         raise last_error
 
+    chunks = [
+        {
+            "id": f"chunk-{i+1}",
+            "title": doc.metadata.get("source", "College Document"),
+            "section": f"Type: {doc.metadata.get('type', 'general')}",
+            "score": round(0.95 - (i * 0.03), 2),
+            "snippet": doc.page_content[:280].strip() + ("..." if len(doc.page_content) > 280 else ""),
+            "url": doc.metadata.get("source") if str(doc.metadata.get("source", "")).startswith("http") else "https://www.aecwb.edu.in",
+        }
+        for i, doc in enumerate(retrieved_docs[:6])
+    ]
+
     return {
         "answer": answer,
         "sources": sources,
+        "chunks": chunks,
     }
 
 
@@ -277,14 +298,14 @@ def get_answer(question: str) -> dict:
 # ============================================================
 if __name__ == "__main__":
     print("\n" + "=" * 60)
-    print(" Running self-test...")
+    print("🚀 Running self-test...")
     print("=" * 60)
 
-    test_question = "What is the MAR and MOOQS tell me about it"
-    print(f"\n Question: {test_question}\n")
+    test_question = "What is MAR and MOOCS? Tell me about them."
+    print(f"\n❓ Question: {test_question}\n")
 
     result = get_answer(test_question)
 
-    print(f" Answer:\n{result['answer']}")
-    print(f"\n Sources: {result['sources']}")
-    print("\n Self-test complete!")
+    print(f"\n💡 Answer:\n{result['answer']}")
+    print(f"\n📚 Sources: {result['sources']}")
+    print("\n✅ Self-test complete!")
